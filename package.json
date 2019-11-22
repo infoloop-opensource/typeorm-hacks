@@ -1,0 +1,36 @@
+{
+  "name": "@infoloop-opensource/typeorm-hacks",
+  "version": "1.0.0",
+  "description": "Some hacks to allow special usage of typeorm, e.g., allow same entities to be stored in different dbs.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infoloop-opensource/typeorm-hacks.git"
+  },
+  "keywords": [
+    "typeorm",
+    "hack"
+  ],
+  "author": "wenchao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infoloop-opensource/typeorm-hacks/issues"
+  },
+  "homepage": "https://github.com/infoloop-opensource/typeorm-hacks#readme",
+  "devDependencies": {
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/es2015/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && npm run build:es2015 && npm run build:cjs",
+    "build:es2015": "tsc --declaration --skipLibCheck --module es2015 --target es2015 --outDir dist/es2015",
+    "build:cjs": "tsc --declaration --skipLibCheck --module commonjs --target es5 --outDir dist/cjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@infoloop-opensource/abstractions": "0.0.1",
+    "typeorm": "^0.2.20"
+  }
+}
