@@ -3,7 +3,7 @@ import { Entity } from 'typeorm';
 export const decorate = (clazz, decorator) => {
     return decorator(clazz);
 };
-const HackedEntityDecorator = (options) => {
+export const HackedEntityDecorator = (options) => {
     return function (clazz) {
         const anonymousClass = utils.anonymizeClass(clazz);
         Entity(options)(anonymousClass);

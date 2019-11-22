@@ -5,7 +5,7 @@ export const decorate = <T> (clazz: Class<T>, decorator: RuntimeClassDecorator<T
     return decorator(clazz);
 };
 
-const HackedEntityDecorator = <T> (options: EntityOptions): RuntimeClassDecorator<T> => {
+export const HackedEntityDecorator = <T> (options: EntityOptions): RuntimeClassDecorator<T> => {
     return function (clazz: Class<T>) {
         const anonymousClass = utils.anonymizeClass(clazz);
         Entity(options)(anonymousClass);
