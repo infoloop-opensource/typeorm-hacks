@@ -1,13 +1,10 @@
-import {Class, RuntimeClassDecorator, utils} from '@infoloop-opensource/abstractions';
+import {Class, RuntimeClassDecorator} from '@infoloop-opensource/abstractions';
+import {anonymizeClass} from '@infoloop-opensource/common-utils';
 import {Entity, EntityOptions} from 'typeorm';
 
-export const decorate = <T> (clazz: Class<T>, decorator: RuntimeClassDecorator<T>): Class<T> => {
-    return decorator(clazz);
-};
-
-export const HackedEntityDecorator = <T> (options: EntityOptions): RuntimeClassDecorator<T> => {
+export const HackedEntity = <T> (options: EntityOptions): RuntimeClassDecorator<T> => {
     return function (clazz: Class<T>) {
-        const anonymousClass = utils.anonymizeClass(clazz);
+        const anonymousClass = anonymizeClass(clazz);
         Entity(options)(anonymousClass);
         return anonymousClass;
     };

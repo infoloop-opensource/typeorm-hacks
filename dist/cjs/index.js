@@ -1,13 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var abstractions_1 = require("@infoloop-opensource/abstractions");
+var common_utils_1 = require("@infoloop-opensource/common-utils");
 var typeorm_1 = require("typeorm");
-exports.decorate = function (clazz, decorator) {
-    return decorator(clazz);
-};
-exports.HackedEntityDecorator = function (options) {
+exports.HackedEntity = function (options) {
     return function (clazz) {
-        var anonymousClass = abstractions_1.utils.anonymizeClass(clazz);
+        var anonymousClass = common_utils_1.anonymizeClass(clazz);
         typeorm_1.Entity(options)(anonymousClass);
         return anonymousClass;
     };

@@ -8,8 +8,9 @@ For now there is no neat hack for `Column` decorator at runtime.
 1. Store entities in different tables or different dbs while using the same class type for entity declaration
 
 ```
-import {Connection, createConnection, Repository, Entity, EntityOptions, PrimaryColumn} from 'typeorm';
-import {decorate, HackedEntityDecorator} from '@infoloop-opensource/typeorm-hacks';
+import {Connection, createConnection, Repository, EntityOptions, PrimaryColumn} from 'typeorm';
+import {decorateClass} from '@infoloop-opensource/common-utils';
+import {decorate, HackedEntity} from '@infoloop-opensource/typeorm-hacks';
 
 const config = {
     "host": "localhost",
@@ -25,11 +26,11 @@ class TestClass {
 }
 
 const test = async () => {
-    const TC1 = decorate(TestClass, HackedEntityDecorator<TestClass>({
+    const TC1 = decorateClass(TestClass, HackedEntity<TestClass>({
             name: 'test',
             database: 'qa'
         }));
-    const TC2 = decorate(TestClass, HackedEntityDecorator<TestClass>({
+    const TC2 = decorateClass(TestClass, HackedEntity<TestClass>({
         name: 'test',
         database: 'stage'
     }));
