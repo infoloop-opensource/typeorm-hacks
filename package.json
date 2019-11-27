@@ -1,6 +1,6 @@
 {
   "name": "@infoloop-opensource/typeorm-hacks",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Some hacks to allow special usage of typeorm, e.g., allow same entities to be stored in different dbs.",
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/infoloop-opensource/typeorm-hacks#readme",
   "devDependencies": {
+    "@types/node": "^12.12.14",
+    "mysql": "^2.17.1",
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2"
   },

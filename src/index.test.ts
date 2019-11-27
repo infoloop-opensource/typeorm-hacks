@@ -1,13 +1,7 @@
-# typeorm-hacks
+import {Column, createConnection, Repository, EntityOptions, PrimaryColumn} from 'typeorm';
+import {decorateClass} from '@infoloop-opensource/common-utils';
+import {HackedEntity} from './index';
 
-This package currently is a minimal implementation to meet special usages of typeorm.
-For now there is no neat hack for `Column` decorator at runtime. 
-
-## Examples
-
-1. Store entities in different tables or different dbs while using the same class type for entity declaration
-
-```
 const config = {
     "host": "localhost",
     "port": 3306,
@@ -80,4 +74,3 @@ const test = async () => {
 };
 
 test();
-``` 
