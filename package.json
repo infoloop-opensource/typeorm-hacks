@@ -1,6 +1,6 @@
 {
   "name": "@infoloop-opensource/typeorm-hacks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Some hacks to allow special usage of typeorm, e.g., allow same entities to be stored in different dbs.",
   "repository": {
     "type": "git",
@@ -32,8 +32,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@infoloop-opensource/abstractions": "^0.1.2",
-    "@infoloop-opensource/common-utils": "0.0.1",
+    "@infoloop-opensource/abstractions": "^0.1.5",
+    "@infoloop-opensource/common-utils": "0.0.2",
     "typeorm": "^0.2.20"
   }
 }
