@@ -34,6 +34,6 @@
   "dependencies": {
     "@infoloop-opensource/abstractions": "^0.1.5",
     "@infoloop-opensource/common-utils": "0.0.2",
-    "typeorm": "^0.2.20"
+    "typeorm": "^0.2.25"
   }
 }
